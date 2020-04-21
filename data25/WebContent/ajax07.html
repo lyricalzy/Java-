@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('#b1').click(function() {
+					$('#t1').empty()
+					$.ajax({
+						url: 'data/member1.json',
+						dataType: 'json',
+						success: function(doc) {
+							console.log(doc)
+							if (doc.length > 0) {
+								$('#t1').append('<tr><td>이름</td><td>나이</td><td>소속</td><td>전화</td></tr>')
+								$(doc).each(function(i, person) {
+									console.log(i + ': ' + person.name)
+									name = person.name
+									age = person.age
+									company = person.company
+									tel = person.tel
+									total = '<tr><td>' + name +
+											'</td><td>' + age +
+											'</td><td>' + company +
+											'</td><td>' + tel + '</td></tr>';
+									$('#t1').append(total)
+								})
+							}
+						}
+					})
+				})
+				$('#b2').click(function() {
+					$('#t1').empty()
+					$.ajax({
+						url: 'data/member2.json',
+						dataType: 'json',
+						success: function(doc) {
+							if(doc.length > 0){
+								$('#t1').append('<tr><td>id</td><td>이름</td><td>성</td><td>이메일</td><td>성별</td><td>ip주소</td></tr>')
+								$(doc).each(function(i, person) {
+									id = person.id
+									fName = person.first_name
+									lName = person.last_name
+									email = person.email
+									gender = person.gender
+									ipAddress = person.ip_address
+									total = "<tr><td>" + id + "</td><td>" + fName + 
+											"</td><td>" + lName + "</td><td>" + email +
+											"</td><td>" + gender + "</td><td>" + ipAddress + '</tr>'
+									$('#t1').append(total)
+									$.ajax({
+										url: 'db02.jsp',
+										data:{
+											id: id,
+											firstName: fName,
+											lastName: lName,
+											email: email,
+											gender: gender,
+											ipAddress: ipAddress
+										},
+										success: function() {
+											console.log('db에 전송 성공!')
+										}
+									})
+								})
+							}
+						}
+					})
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<button id="b1">member1.json 읽어오기</button>
+		<button id="b2">member2.json 읽어오기</button>
+		<hr>
+		<table id="t1" border="1"></table>
+	</body>
+</html>

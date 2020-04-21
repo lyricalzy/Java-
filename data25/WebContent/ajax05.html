@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('#b1').click(function() {
+					// json이 있는 주소로 ajax통신
+					$.ajax({
+						url: 'data/member2.xml',
+						success: function(doc) {
+							console.log('member2.xml 연결 성공!!')
+							list = $(doc).find('record')
+							$(list).each(function() {
+								idText = $(this).find('id').text()
+								fNameText = $(this).find('first_name').text()
+								lNameText = $(this).find('last_name').text()
+								emailText = $(this).find('email').text()
+								genderText = $(this).find('gender').text()
+								ipAddressText = $(this).find('ip_address').text()
+								// db에 넣자.
+								$.ajax({
+									url: 'db02.jsp',
+									data:{
+										id: idText,
+										firstName: fNameText,
+										lastName: lNameText,
+										email: emailText,
+										gender: genderText,
+										ipAddress: ipAddressText
+									},
+									success: function() {
+										console.log('db에 전송 성공!')
+									}
+								})
+							})
+						}
+					})
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<button id="b1">XML파일 DB에 저장하기2</button>
+		<hr>
+		<div id="d1"></div>
+	</body>
+</html>

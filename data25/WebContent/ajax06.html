@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('#b1').click(function() {
+					$.ajax({
+						url: 'data/member1.json',
+						dataType: 'json',
+						success: function(doc) {
+							console.log(doc)
+							if (doc.length > 0) {
+								$(doc).each(function(i, person) {
+									console.log(i + ': ' + person.name)
+									name = person.name
+									age = person.age
+									company = person.company
+									tel = person.tel
+									total = '이름: ' + name + ', 나이: ' + age
+											+ ', 회사: ' + company + ', 전화: ' + tel + '<br>';
+									$('#d1').append(total)
+								})
+							}
+						}
+					})
+				})
+				$('#b2').click(function() {
+					$.ajax({
+						url: 'data/member2.json',
+						dataType: 'json',
+						success: function(doc) {
+							if(doc.length > 0){
+								$(doc).each(function(i, person) {
+									id = person.id
+									fName = person.first_name
+									lName = person.last_name
+									email = person.email
+									gender = person.gender
+									ipAddress = person.ip_address
+									total = "아이디: " + id + ", 이름: " + fName + 
+											", 성: " + lName + ", 이메일: " + email +
+											", 성별: " + gender + ", ip주소: " + ipAddress + '</br>'
+									$('#d1').append(total)
+								})
+							}
+						}
+					})
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<button id="b1">member1.json 읽어오기</button>
+		<button id="b2">member2.json 읽어오기</button>
+		<hr>
+		<div id="d1"></div>
+	</body>
+</html>
