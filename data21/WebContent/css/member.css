@@ -1,0 +1,43 @@
+@charset "UTF-8";
+textarea{
+	background: yellow;
+	width: 300px;
+}
+
+.c1{
+	text-align: center;
+	background: pink;	
+}
+
+.c2{
+	background: lightblue;
+	width: 300px;
+	color: white;
+}
+
+.c3{
+	background: green;
+}
+
+#button{
+	background: green;
+	color: white;
+	font-size: 25px;
+	border-color: yellow;	
+}
+
+body{
+	color: blue;
+}
+
+h1{
+	text-align: center;
+	color: red;
+	font-style: italic;
+	font-weight: bold;
+	border-style: dashed;
+	border-width: 5px;
+	border-color: lime;
+	background: yellow;
+	box-shadow: 10px-10px fuchsia;
+}
