@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+#total {
+	background-image: url(../img/back.jpg);
+	width: 800px;
+	height: 2000px;
+	margin-left: 100px;
+}
+
+#top1 {
+	width: 800px;
+	height: 100px;
+	background: lime;
+}
+
+#top2 {
+	width: 250px;
+	height: 100px;
+	background: black;
+	color: yellow;
+	position: fixed;
+	top: 5px;
+	right: 5px;
+	border-radius: 100px 10px 100px 10px;
+	box-shadow: 20px 20px yellow;
+	border-color: red;
+	border-style: dotted;
+}
+
+#center {
+	color: white;
+}
+
+li { /* 선택자(tag): selector */
+	list-style: none;
+	float: left;
+	padding: 15px;
+}
+
+li:nth-child(2n) { /* li중에서 짝수번째만 선택 */
+	background: pink;
+}
+
+li:nth-child(2n+1) { /* li중에서 홀수번째만 선택 */
+	background: orange;
+}
+
+li:first-child {
+	border-radius: 20px 0 0 20px; /* 테두리를 왼쪽위부터 시계방향으로 */
+}
+
+li:last-child {
+	border-radius: 0 20px 20px 0;
+}
+
+a {
+	text-decoration: none;
+	color: red;
+}
+
+/* 클릭했을때 이벤트 */
+a:hover {
+	color: lime
+}
+
+a:visited { /* 가상선택자: virtual selector */
+	color: black;
+}
