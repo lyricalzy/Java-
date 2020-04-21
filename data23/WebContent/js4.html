@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function call() { // 세개의 입력값을 가지고 와서 배열에 넣어줌
+				var result = [];
+				
+				var data1 = parseInt(document.querySelector('#data1').value);
+				var data2 = parseInt(document.querySelector('#data2').value);
+				var data3 = parseInt(document.querySelector('#data3').value);
+				
+				result[0] = data1;
+				result[1] = data2;
+				result[2] = data3;
+				
+				return result;
+			}
+			function call1() { // 더하기
+				var result = call();
+				sum = 0;
+				for (var i = 0; i < result.length; i++) {
+					sum = sum + result[i];
+				}
+				alert('더하기 결과: ' + sum);
+			}
+			function call2() { // 빼기
+				var result = call();
+				sum = result[0];
+				for (var i = 1; i < result.length; i++) {
+					sum = sum - result[i];
+				}
+				alert('빼기 결과: ' + sum);
+			}
+			function call3() { // 곱하기
+				var result = call();
+				sum = 1;
+				for (var i = 0; i < result.length; i++) {
+					sum = sum * result[i];
+				}
+				alert('곱하기 결과: ' + sum);
+			}
+			function call4() {
+				if (document.querySelector('#oper').value == '+') {
+					call1();
+				}else if (document.querySelector('#oper').value == '-') {
+					call2();
+				}else if (document.querySelector('#oper').value == '*') {
+					call3();
+				}else {
+					alert('잘못 입력하셨습니다');
+				}
+			}
+		</script>
+	</head>
+	<body>
+		값 입력1 <input type="text" name="data1" id="data1"><br>
+		값 입력2 <input type="text" name="data2" id="data2"><br>
+		값 입력3 <input type="text" name="data3" id="data3"><br>
+		연산자 <input type="text" name="oper" id="oper"><br>
+		<!-- 연산자 입력값에 따라서 연산이 달라진다. +, -, * -->
+		<input type="button" onclick="call4()" value="계산하기">
+	</body>
+</html>

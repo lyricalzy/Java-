@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				//$('button').click(function() {
+				$('#id').blur(function() {
+					idValue = $('#id').val()
+					$.ajax({
+						url: 'idOver.jsp', // 비동기 통신 주소
+						data: { // 클라이언트가 서버로 넘기는 데이터
+							id: idValue // name으로 넘어감
+						}, // data close
+						success: function(result) {
+							console.log('성공!!!!')
+							console.log('중복 여부 확인: ' + result)
+							$('div').html('중복 여부 확인: ' + result)
+						} // success close
+					}) // ajax close
+				}) // button close
+			}) // main close
+		</script>
+	</head>
+	<body>
+		중복체크할 id 입력: <input type="text" name="id" id="id">
+		<button type="button">중복 체크</button>
+		<hr>
+		<div style="color: red;"></div>
+	</body>
+</html>

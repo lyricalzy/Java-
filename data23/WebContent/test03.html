@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>3번 문제</title>
+		<script type="text/javascript" src="js/out.js"></script>
+		<script type="text/javascript">
+			function call() { // 두개의 입력값을 가지고 와서 배열에 넣어줌
+				var array = [];
+				
+				var data1 = parseInt(document.querySelector('#data1').value);
+				var data2 = parseInt(document.querySelector('#data2').value);
+				
+				array[0] = data1;
+				array[1] = data2;
+				
+				return array;
+			}
+			function call1() { // 더하기
+				var array = call();
+				sum = 0;
+				for (var i = 0; i < array.length; i++) {
+					sum = sum + array[i];
+				}
+				document.querySelector('#result').value = sum;
+			}
+			function call2() { // 빼기
+				var array = call();
+				sum = array[0];
+				for (var i = 1; i < array.length; i++) {
+					sum = sum - array[i];
+				}
+				document.querySelector('#result').value = sum;
+			}
+			function call3() { // 곱하기
+				var array = call();
+				sum = 1;
+				for (var i = 0; i < array.length; i++) {
+					sum = sum * array[i];
+				}
+				document.querySelector('#result').value = sum;
+			}
+			function call4() { // 나누기
+				var array = call();
+				sum = array[0];
+				for (var i = 1; i < array.length; i++) {
+					sum = sum / array[i];
+				}
+				document.querySelector('#result').value = sum;
+			}
+			function call5() { // 계산하기
+				if (document.querySelector('#oper').value == '+') {
+					call1();
+				}else if (document.querySelector('#oper').value == '-') {
+					call2();
+				}else if (document.querySelector('#oper').value == '*') {
+					call3();
+				}else if (document.querySelector('#oper').value == '/') {
+					call4();
+				}else {
+					alert('잘못 입력하셨습니다');
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>값 입력1</td>
+				<td><input type="text" name="data1" id="data1"></td>
+			</tr>
+			<tr>
+				<td>값 입력2</td>
+				<td><input type="text" name="data2" id="data2"></td>
+			</tr>
+			<tr>
+				<td>연산자</td>
+				<td><input type="text" name="oper" id="oper"></td>
+			</tr>
+			<tr>
+				<!-- 연산자 입력값에 따라서 연산이 달라진다. +, -, * -->
+				<td colspan="2"><input type="button" onclick="call5()" value="계산하기"></td>
+			</tr>
+			<tr>
+				<td>결과값:</td>
+				<td><input style="color:MediumSeaGreen;" type="text" name="result" id="result"></td>
+			</tr>
+		</table>
+		<button onclick="call6()">외부 js파일 호출.</button>
+	</body>
+</html>

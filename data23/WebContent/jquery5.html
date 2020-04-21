@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('button').click(function() {
+					telValue = $('#tel').val()
+					$.ajax({
+						url: 'tel3.jsp', // 비동기 통신 주소
+						data: { // 클라이언트가 서버로 넘기는 데이터
+							tel: telValue
+						}, // data close
+						success: function(result) {
+							alert('성공!!!!')
+							console.log('받은 인증키: ' + result)
+						} // success close
+					}) // ajax close
+				}) // button close
+			}) // main close
+		</script>
+	</head>
+	<body>
+		전화번호: <input type="text" name="tel" id="tel">
+		<button type="button">인증번호 받기</button>
+		<hr>
+		<div style="color: red;"></div>
+	</body>
+</html>

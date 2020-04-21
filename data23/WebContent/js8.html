@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+		<script type="text/javascript">
+			$(function() { // document.ready(), call-back()함수
+				$('#car').click(function() { // 버튼을 클릭하면 자동 실행되는 무명함수
+					alert('차 버튼이 눌러졌어요.')
+					// $('div').text('이미지 추가됨.') // setText()
+					$('div').append('<img src=car.jpg width=50 height=50>') // append()
+				}) // #car close
+				$('#hong').click(function() { // 버튼을 클릭하면 자동 실행되는 무명함수
+					alert('홍길동 버튼이 눌러졌어요.')
+					$('div').append('<font color=blue>홍길동</font>') // append()
+				}) // #hong close
+			}) // main close
+		</script>
+	</head>
+	<body>
+		<button type="button" id="car">이미지 추가</button><br>
+		<button type="button" id="hong">홍길동 추가</button>
+		<div></div>
+	</body>
+</html>

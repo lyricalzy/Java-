@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>4번 문제</title>
+		<script type="text/javascript">
+			var num = 0;
+			function plus() {
+				num++;
+				document.querySelector('#result').value = num;
+			}
+			function minus() {
+				num--;
+				document.querySelector('#result').value = num;
+			}
+			function zero() {
+				num = 0;
+				document.querySelector('#result').value = num;
+			}
+		</script>
+	</head>
+	<body>
+		숫자: <input type="text" name="result" id="result" value="0">
+		<button onclick="plus()">+</button>
+		<button onclick="minus()">-</button>
+		<button onclick="zero()">초기화</button>
+		<!-- 외부사이트의 링크를 그대로 가져와서 링크할 수도 있음 -->
+		<img alt="" src="https://ssl.pstatic.net/tveta/libs/1280/1280370/322a7e3ba974a1870989_20200313114542157.jpg">
+	</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function call() {
+				name = document.querySelector('#name').value;
+				tel = document.querySelector('#tel').value;
+				alert('이름: ' + name + ', 연락처: ' + tel);
+			}
+		</script>
+	</head>
+	<body>
+		이름: <input type="text" name="name" id="name">	
+		휴대폰번호: <input type="text" name="tel" id="tel">
+		<button onclick="call()">클릭</button>	
+	</body>
+</html>

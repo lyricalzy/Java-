@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+		<!-- content delivery network: CDN -->
+		<script type="text/javascript">
+			target = 55
+			$(function() {
+				$('#b1').click(function() {
+					// 1. 입력한 값 가지고 오기
+					var data = $('#num').val()
+					
+					// 2. 동일한지 체크
+					if (data == target) {
+					// 	2-1. 동일한 경우 확인 메시지 출력
+						$('#d1').html('<h3>성공입니다!</h3>')
+						$(this).attr('disabled', true)
+					// 	2-2. 동일하지 않는 경우
+					}else {
+						//		크면 커요 출력
+						if (data > target) {
+							$('#d1').html('<h3>너무 커요!</h3>')
+						}else {
+						//		작으면 작아요 출력
+							$('#d1').html('<h3>너무 작아요!</h3>')
+						}
+					}
+				}) // click
+			}) // main
+		</script>
+	</head>
+	<body>
+		생각한 값: <input type="text" id="num"><br>
+		<button type="button" id="b1">정답을 맞춰보자</button>
+		<br>
+		<div id="d1"></div>
+	</body>
+</html>

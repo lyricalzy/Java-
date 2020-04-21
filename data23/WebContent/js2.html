@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			// 1.값을 알고 있는 경우: []을 사용!
+			list = [1, 2, 3, 4, 5];
+			for (var i = 0; i < list.length; i++) {
+				console.log(i + ': ' + list[i])
+			}
+			
+			// js에서의 배열은 arrayList와 배열의 성격을 모두 가지고 있다
+			me = ['홍길동', 100, '메가']; // 타입이 달라도 들어감
+			data = prompt('이름 입력'); // 김길동
+			me[0] = data;
+			for (var i = 0; i < me.length; i++) {
+				console.log(i + ': ' + me[i]);
+			}
+			
+			result = [];
+			for (var i = 0; i < 3; i++) {
+				result[i] = parseInt(prompt('숫자 입력'));
+			}
+			
+			sum = 0;
+			for (var i = 0; i < result.length; i++) {
+				sum = sum + result[i];
+			}
+			console.log('더한 결과는 ' + sum);
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<!-- 구글에서 다운받아 링크 -->
+		<!-- content delivery network:CDN -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+		<!-- 내 서버에서 링크 -->
+		<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+		<script type="text/javascript">
+			$(function() { // body를 domtree로 먼저 읽어와라
+				// 무명 함수. 어차피 바로 실행할 것이기 때문에 이름이 필요없음
+				var data = $("input").val() /* document.querySelector('#input')와 같은 역할 */
+				alert(data)				
+			})
+		</script>
+	</head>
+	<body>
+		<input type="button" value="나를 눌러요.!!!">
+	</body>
+</html>

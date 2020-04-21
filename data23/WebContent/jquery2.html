@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+		<!-- content delivery network: CDN -->
+		<script type="text/javascript">
+			array = ['admin', 'root', 'manager']
+			$(function() {
+				$('#b1').click(function() {
+					// 1. 입력한 id값 가지고 오기. input(value), 그외(text) 
+					var data = $('#id').val() // 입력값 없는 val(): get의 의미
+					console.log('가지고 온 값: ', data)
+					$('#id').val('확인중.') // 입력값 있는 val(입력값): set의 의미
+					// 2. 가지고 온 데이터를 배열을 순회하면서 있는지 체크
+					for (var i = 0; i < array.length; i++) {
+						if (data == array[i]) {
+							//$('#id').val(i + '번째 위치에 있음.')
+							$('#d1').html('<h3 style=color:red>' + i + '번째 위치에 있음.</h3>')
+							break
+						}else {
+							//$('#id').val('가능 목록에 없음.')
+							$('#d1').html('<h3 style=color:blue> 목록에 없음.</h3>')
+						}
+					}
+					
+					// 3. 체크여부 출력
+	
+				})
+			})
+		</script>
+	</head>
+	<body>
+		아이디 <input type="text" id="id"><br>
+		<button type="button" id="b1">아이디 로그인 가능 여부 확인</button>
+		<br>
+		<div id="d1"></div>
+	</body>
+</html>

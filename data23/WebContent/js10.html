@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>회원가입</title>
+		<style type="text/css">
+		input{
+			width: 300px;
+			height: 30px;
+		}
+		div {
+			color: red;
+		}
+		</style>
+		<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('#id').keyup(function() { // 키보드에서 손을 뗄때마다 실행
+					if ($('#id').val().length < 5) {
+						$('#idDiv').text('아이디는 5글자 이상 입력해야 합니다.')
+						// text('글자만'), html('태그')
+					}else {
+						$('#idDiv').text('')
+					}
+				}) // #id close
+				
+				$('#pw2').keyup(function() {
+					if ($('#pw1').val() != $('#pw2').val()) {
+						$('#pwDiv').text('비밀번호가 다릅니다')
+					}else {
+						$('#pwDiv').text('')
+					}
+				}) // #pw2 close
+			}) // main close
+		</script>
+	</head>
+	<body>
+		아이디<br>
+		<input type="text" id="id"><br>
+		<div id="idDiv"></div><br>
+		비밀번호<br>
+		<input type="text" id="pw1"><br><br>
+		비밀번호 재확인<br>
+		<input type="text" id="pw2"><br>
+		<div id="pwDiv"></div>
+	</body>
+</html>

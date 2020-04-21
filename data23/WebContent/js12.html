@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+		<script type="text/javascript">
+			var num = 55; // 맞출 숫자
+			$(function() {
+				$("#button").click(function() {
+					if ($('#guess').val() == num) {
+						alert('정답입니다!');
+					}else if ($('#guess').val() > num) {
+						alert('너무 큽니다.');
+					}else {
+						alert('너무 작습니다.');
+					}
+				}) // #button close
+			}) // main close
+		</script>
+	</head>
+	<body>
+		맞춰보자! <input type="text" id="guess"> <input type="button" id="button" value="맞나?">
+	</body>
+</html>

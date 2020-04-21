@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="js/jquery-3.4.1.js"></script> <!-- 연결만 해주는 태그 -->
+		<!-- content delivery network: CDN -->
+		<script type="text/javascript">
+		//함수 호출방식: call-back호출방식
+			$(function() { //document.ready()
+				// id가 b1인 것이 클릭되었을 때 옆에 있는 함수 부분을 실행시켜주세요
+				$('#b1').click(function() {
+					alert('콜백함수 호출됨')
+					//$('body').append('<h3>나는 자식</h3>')
+					$('body').html('<h3>나는 자식</h3>') // body위를 덮어씀. 버튼이 사라진다
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<button type="button" id="b1">콜백함수 호출</button>
+	</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function call() {
+				dayTag = document.querySelector('#day');
+				dayValue = dayTag.value;
+				
+				if (dayValue == '월요일') {
+					console.log('공부!');
+				}else if (dayValue == '화요일') {
+					console.log('공부2!');
+				}else if (dayValue == '수요일') {
+					console.log('공부3!');
+				}else if (dayValue == '목요일') {
+					console.log('공부4!');
+				}else if (dayValue == '금요일') {
+					console.log('공부5!');
+				}else if (dayValue == '토요일') {
+					console.log('휴식!');
+				}else if (dayValue == '일요일') {
+					console.log('휴식2!');
+				}
+				else {
+					alert("요일을 잘못 입력하셨습니다");
+				}
+				
+				timeTag = document.querySelector('#time');
+				timeValue = parseInt(timeTag.value);
+				if (timeValue < 11) {
+					console.log('굿모닝!');
+				}else if (timeValue < 16) {
+					console.log('굿애프터눈!');
+				}else {
+					console.log('굿이브닝!');
+				}
+			}
+		</script>
+	</head>
+	<body>
+		요일을 입력하세요. <input type="text" name="day" id="day"><br>
+		현재 시각을 입력하세요. <input type="text" name="time" id="time">
+		<button type="button" onclick="call()">나를 눌러요.</button>
+		
+		<!-- 요일을 입력받아 해당 요일별 할일을 처리하세요. -->
+		<!-- 시각이 11시 전이면 굿모닝, 4시 전이면 굿애프터눈, 그 이후면 굿이브닝 -->
+		<!-- name: jsp에서 입력값을 받을 때 사용
+			String day = request.getParameter("day");
+			
+			id, class: css, js에서 특정한 태그를 선택할 때 사용
+			#day {
+				// 스타일 정의
+			}
+			var day = document.querySelector('#day');
+		 -->
+	</body>
+</html>
