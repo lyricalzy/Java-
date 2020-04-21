@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function sum1() {
+				x = prompt("첫번째 수를 입력하세요");
+				x2 = parseInt(x);
+				y = prompt("첫번째 수를 입력하세요");
+				y2 = parseInt(y);
+				alert("두 수의 합은 " + (x2 + y2));
+			}
+			
+			function sum2() {
+				x = prompt("첫번째 수를 입력하세요");
+				x2 = parseInt(x);
+				y = prompt("첫번째 수를 입력하세요");
+				y2 = parseInt(y);
+				sum = 0;
+				for (i = x2; i <= y2; i++) {
+					sum = sum + i;
+				}
+				alert(x2 + "부터 " + y2 + "까지의 합은 " + sum);
+			}
+			
+			function login() {
+				id = prompt("id를 입력하세요");
+				pw = prompt("pw를 입력하세요");
+				if (id.value == "root" && pw.value == "1234") {
+					alert("로그인 ok");
+				}else {
+					alert("로그인 not");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="두수의 합" onclick="sum1()">
+		<input type="button" value="x부터 y까지의 합" onclick="sum2()">
+		<input type="button" value="로그인" onclick="login()">
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

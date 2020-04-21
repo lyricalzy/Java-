@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function call0() {
+				alert("함수0 호출됨")
+			}
+		
+			function call1() {
+				alert("함수1 호출됨");
+			}
+			
+			function call2() {
+				alert("함수2 호출됨");
+			}
+			
+			function call3(x, y) {
+				alert("두 수의 합은 " + (x + y));
+			}
+			
+			//call1();
+		</script>
+	</head>
+	<body>
+		<input type="button" value="함수1호출" onclick="call1()">
+		<br>
+		<input type="button" value="함수2호출" onclick="call2()">
+		<br>
+		<button type="button" onclick="call0()">함수0  호출</button>
+		<br>
+		<button onclick="call3(100,200)">함수 3 호출</button>
+	</body>
+</html>

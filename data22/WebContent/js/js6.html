@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function login() {
+				id = document.getElementById("id");
+				pw = document.getElementById("pw");
+				if (id.value == "root" && pw.value == "1234") {
+					alert("로그인 ok");
+				}else {
+					alert("로그인 not");
+				}
+			}
+			
+			function check() {
+				id = document.querySelector("#id");
+				pw = document.querySelector("#pw");
+				idValue = id.value;
+				pwValue = pw.value;
+				
+				console.log(idValue.length);
+				if (idValue.length >= 4 && pwValue.length >= 4) {
+					location.href = "check.jsp?id=" + idValue + "&pw=" + pwValue;
+				}else {
+					alert("ip와 pw는 4글자 이상 입력해야 합니다.");
+					id.value = "";
+					pw.value = "";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		아이디: <input type="text" name="id" id="id"><br>
+		패스워드: <input type="text" name="pw" id="pw"><br>
+		<br>
+		<input type="button" value="로그인 처리 함수 호출" onclick="login()">
+		<input type="button" value="입력값 길이 체크 함수 호출" onclick="check()">
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

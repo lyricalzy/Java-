@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function compare() {
+				data1 = document.querySelector("#num1");
+				data2 = document.querySelector("#num2");
+				if (parseInt(data1.value) == parseInt(data2.value)) {
+					alert("두 수가 같습니다.");
+				}else if (parseInt(data1.value) > parseInt(data2.value)) {
+					alert("첫번째 수가 두번째 수보다 큽니다.");
+				}else {
+					alert("두번째 수가 첫번째 수보다 큽니다.");
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		첫번째 수: <input type="text" name="num1" id="num1">	
+		<br>
+		두번째 수: <input type="text" name="num2" id="num2">
+		<br>
+		<input type="button" value="누가 더 클까?" onclick="compare()">
+	</body>
+</html>
