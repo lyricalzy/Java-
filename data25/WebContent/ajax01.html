@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('#b1').click(function() {
+					// XML이 있는 주소로 ajax통신
+					$.ajax({
+						url: 'data/rank.xml',
+						success: function(doc) {
+							console.log('xml연결 성공!!')
+							console.log('xml결과: ' + doc)
+							list = $(doc).find('rank')
+							/* if (list.length > 0) {
+								//alert('rank가 여러개 있어요')
+								for (var i = 0; i < list.length; i++) {
+									alert($(list[i]).find('name').text())
+								}
+							} */
+							$(list).each(function() {
+								name = $(this).find('name').text()
+								tel = $(this).find('tel').text()
+								console.log('이름: ' + name + ', 전화번호: ' + tel)
+								$('#d1').append('이름: ' + name + ', 전화번호: ' + tel + '<br>')
+							})
+						}
+					})
+				})
+				$('#b2').click(function() {
+					// json이 있는 주소로 ajax통신
+					$.ajax({
+						url: 'data/rank.json',
+						dataType: 'json',
+						success: function(result) {
+							console.log('json연결 성공!!')
+							console.log('json결과: ' + result)
+							rankValues = result.rank
+							if (rankValues.length > 0) {
+								console.log(rankValues.length + '개의 목록이 있음')
+								$(rankValues).each(function(index, person) {
+									console.log(index + ': 한사람씩 출력')
+									console.log(person)
+									console.log('이름: ' + person.name)
+									console.log('전화: ' + person.tel)
+								})
+							}
+							
+						}
+					})
+				})
+				$('#b3').click(function() {
+					// json이 있는 주소로 ajax통신
+					$.ajax({
+						url: 'data/member.xml',
+						success: function(doc) {
+							console.log('member.xml 연결 성공!!')
+							list = $(doc).find('record')
+							$(list).each(function() {
+								console.log(this)
+								name = $(this).find('name').text()
+								age = $(this).find('age').text()
+								company = $(this).find('company').text()
+								tel = $(this).find('tel').text()
+								console.log('이름: ' + name + ', 나이: ' + age + ', 회사: ' 
+										+ company + ', 전화번호: ' + tel)
+								$('#d1').append('이름: ' + name + ', 나이: ' + age + ', 회사: '
+										+ company + ', 전화번호: ' + tel + '<br>')
+								// db에 넣자.
+								$.ajax({
+									url: 'db01.jsp',
+									data:{
+										
+									},
+									success: function() {
+										alert('db에 전송 성공!')
+									}
+								})
+							})
+						}
+					})
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<button id="b1">XML파일 읽어오기</button>
+		<button id="b2">JSON파일 읽어오기</button>
+		<button id="b3">member.xml 읽어오기</button>
+		<hr>
+		<div id="d1"></div>
+	</body>
+</html>
